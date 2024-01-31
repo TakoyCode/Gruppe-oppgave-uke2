@@ -24,38 +24,57 @@ css farger og lignende (utseende)
 evt. tømme inventory å sette itemsa ute igjen
 -->
 
-<body>
+<body style="background-color: lightgray">
 
     <h1>Items</h1>
 
-    <button onclick="addItems('<div>Sword</div>')">Sword</button>
-    <button onclick="addItems('<div>Bow & Arrow</div>')">Bow & Arrow</button>
-    <button onclick="addItems('<div>Food</div>')">Food</button>
-    <button onclick="addItems('<div>Water</div>')">Water</button>
-    <button onclick="addItems('<div>Money</div>')">Money</button>
+    <button class="sword" onclick="addItems('<div>Sword</div>')">Sword</button>
+    <button class="bowAndArrow" onclick="addItems('<div>Bow & Arrow</div>')">Bow & Arrow</button>
+    <button class="food" onclick="addItems('<div>Food</div>')">Food</button>
+    <button class="water" onclick="addItems('<div>Water</div>')">Water</button>
+    <button class="money" onclick="addItems('<div>Money</div>')">Money</button>
+    <button class="potion" onclick="addItems('<div>Potion</div>')">Potion</button>
+    <br />
+    <button class="elixir" onclick="addItems('<div>Elixir</div>')">Elixir</button>
+    <button class="clothing" onclick="addItems('<div>Clothing</div>')">Clothing</button>
+    <button class="armour" onclick="addItems('<div>Armour</div>')">Armour</button>
+    <button class="pokeball" onclick="addItems('<div>Pokéball</div>')">Pokéball</button>
+    <button class="baseballbat" onclick="addItems('<div>Baseball Bat</div>')">Baseball Bat</button>
+    <button class="diamond" onclick="addItems('<div>Diamond</div>')">Diamond</button>
 
     <br />
     <br />
 
-    <h1 onclick="showItems()">Inventory</h1>
+    <h1>Inventory</h1>
 
-    <div style="border: 3px solid pink;" id="Inventorycard"></div>
+    <div style="border: 3px solid pink; background-color: aliceblue;" id="inventoryCard"></div>
 
+    <br />
 
+    <button class="open" onclick="showItems()">Show Inventory</button>
+    <button class="close" onclick="closeInventory()">Close Inventory</button>
+    <button class="empty" onclick="emptyInventory()">Empty Inventory</button>
 
     <script>
         var inventory = '';
 
         function showItems() {
             // Setter innerHtml til inventory
-            document.getElementById('Inventorycard').innerHTML = inventory;
+            document.getElementById('inventoryCard').innerHTML = inventory;
         }
 
         function addItems(Item) {
             inventory += Item;
         }
 
+        function closeInventory() {
+            document.getElementById('inventoryCard').innerHTML = [];
+        }
 
+        function emptyInventory() {
+            inventory = [];
+            showItems();
+        }
 
     </script>
 
