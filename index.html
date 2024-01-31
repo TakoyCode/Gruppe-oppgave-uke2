@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Filler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!--
+Teamoppgave: Inventory Filler
+
+    Must have:
+flytting av items til inventory
+et inventory område
+items som vi skal kunne trykke å flytte til inventory
+kunne lagre items i inventoriet
+åpne og lukke inventory
+
+
+Nice to have:
+return function (???)
+css farger og lignende (utseende)
+evt. tømme inventory å sette itemsa ute igjen
+-->
+
+<body>
+
+    <h1>Items</h1>
+
+    <button onclick="addItems('<div>Sword</div>')">Sword</button>
+    <button onclick="addItems('<div>Bow & Arrow</div>')">Bow & Arrow</button>
+    <button onclick="addItems('<div>Food</div>')">Food</button>
+    <button onclick="addItems('<div>Water</div>')">Water</button>
+    <button onclick="addItems('<div>Money</div>')">Money</button>
+
+    <br />
+    <br />
+
+    <h1 onclick="showItems()">Inventory</h1>
+
+    <div style="border: 3px solid pink;" id="Inventorycard"></div>
+
+
+
+    <script>
+        var inventory = '';
+
+        function showItems() {
+            // Setter innerHtml til inventory
+            document.getElementById('Inventorycard').innerHTML = inventory;
+        }
+
+        function addItems(Item) {
+            inventory += Item;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
